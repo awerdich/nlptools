@@ -11,7 +11,7 @@ https://github.com/ccb-hms/computervision/actions/workflows/docker.yml)
     <img style="vertical-align: top" src="./images/OSS-Nvidia-Partnership-Pytorch.webp" width="40%" />
 </p>
 
-## The PyTorch NLP Tools Repository##
+## The PyTorch NLP Tools Repository ##
 
 This repository contains template code that that can be used as a starting point for NLP projects. 
 All frameworks, libraries and data sets are open source and publicly available.
