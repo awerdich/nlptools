@@ -39,6 +39,15 @@ COPY src/nlptools/__init__.py src/nlptools/__init__.py
 COPY Pipfile Pipfile.lock ./
 RUN --mount=source=.git,target=.git,type=bind  \
     pipenv install --system --deploy --ignore-pipfile --dev
+# Fix versions for packages defined in the .lock file
+RUN --mount=source=.git,target=.git,type=bind  \
+    pipenv sync --system
+
+# Install the CUDA samples
+RUN git clone https://github.com/NVIDIA/cuda-samples.git /opt/cuda-samples
+RUN cd /opt/cuda-samples/Samples/1_Utilities/deviceQuery && \
+    make && \
+    cp  /opt/cuda-samples/Samples/1_Utilities/deviceQuery/deviceQuery /usr/local/bin
 
 # Run the jupyter lab server
 RUN mkdir -p /run_scripts
