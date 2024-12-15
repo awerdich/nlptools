@@ -6,8 +6,13 @@ name = "pypi"
 [packages]
 nlptools = {file = ".", editable = true}
 setuptools-scm = "*"
+numpy = "<2.0"
 
 [dev-packages]
+jupyterlab = "*"
+ipywidgets = "*"
+matplotlib = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.12"
