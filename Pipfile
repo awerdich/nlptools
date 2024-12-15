@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 nlptools = {file = ".", editable = true}
+setuptools-scm = "*"
 
 [dev-packages]
 
