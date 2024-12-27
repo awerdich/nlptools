@@ -7,6 +7,10 @@ name = "pypi"
 nlptools = {file = ".", editable = true}
 setuptools-scm = "*"
 numpy = "<2.0"
+transformers = "*"
+datasets = "*"
+sentencepiece = "*"
+sacremoses = "*"
 
 [dev-packages]
 jupyterlab = "*"
