@@ -4,13 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-nlptools = {file = ".", editable = true}
 setuptools-scm = "*"
 numpy = "<2.0"
 transformers = "*"
 datasets = "*"
 sentencepiece = "*"
 sacremoses = "*"
+nlptools = {file = ".", editable = true}
+huggingface-hub = "*"
 
 [dev-packages]
 jupyterlab = "*"
