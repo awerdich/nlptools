@@ -22,6 +22,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - HOME=/app
       - DATA_DIR=/app/data
+    env_file: "huggingface.env"
     ports:
       - "8888:8888"
     volumes:
