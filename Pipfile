@@ -17,6 +17,8 @@ langchain-ollama = "*"
 ollama = "*"
 langchain-community = "*"
 langchainhub = "*"
+scikit-learn = "*"
+scikit-image = "*"
 
 [dev-packages]
 jupyterlab = "*"
