@@ -40,7 +40,7 @@ COPY Pipfile Pipfile.lock ./
 RUN --mount=source=.git,target=.git,type=bind  \
     pipenv install --system --deploy --ignore-pipfile --dev
 # Fix versions for packages defined in the .lock file
-RUN --mount=source=.git,target=.git,type=bind  \
+ RUN --mount=source=.git,target=.git,type=bind  \
     pipenv sync --system
 
 # Install the CUDA samples
