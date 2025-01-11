@@ -15,16 +15,49 @@ services:
       dockerfile: Dockerfile
       args:
         - DEV_nlptools=1
-    ipc: host
     environment:
-    #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-    #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - NVIDIA_VISIBLE_DEVICES=all
       - HOME=/app
       - DATA_DIR=/app/data
-    env_file: "huggingface.env"
+      - OLLAMA_HOST=ollama
+      - OLLAMA_PORT=11434
+    #env_file: "huggingface.env"
+    depends_on:
+      - ollama
     ports:
-      - "8888:8888"
+      - "7485:8888"
     volumes:
       - .:/app
       - $HOME/data:/app/data
+    networks:
+      - ollamanetwork
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+    ports:
+      - "7486:11434"
+    volumes:
+      - ollamadata:/root/.ollama
+    networks:
+      - ollamanetwork
+
+volumes:
+  ollamadata:
+    external: true
+  webuidata:
+    external: true
+
+networks:
+  ollamanetwork:
+    driver: bridge
