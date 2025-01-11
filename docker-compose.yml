@@ -21,14 +21,14 @@ services:
       - DATA_DIR=/app/data
       - OLLAMA_HOST=ollama
       - OLLAMA_PORT=11434
-    #env_file: "huggingface.env"
+    env_file: ".env"
     depends_on:
       - ollama
     ports:
       - "7485:8888"
     volumes:
       - .:/app
-      - $HOME/data:/app/data
+      - appdata:/app/data
     networks:
       - ollamanetwork
 
@@ -57,6 +57,8 @@ volumes:
     external: true
   webuidata:
     external: true
+  appdata:
+    external: false
 
 networks:
   ollamanetwork:
