@@ -10,8 +10,13 @@ transformers = "*"
 datasets = "*"
 sentencepiece = "*"
 sacremoses = "*"
-nlptools = {file = ".", editable = true}
 huggingface-hub = "*"
+nlptools = {file = ".", editable = true}
+langchain = "*"
+langchain-ollama = "*"
+ollama = "*"
+langchain-community = "*"
+langchainhub = "*"
 
 [dev-packages]
 jupyterlab = "*"
