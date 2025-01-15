@@ -19,12 +19,15 @@ langchain-community = "*"
 langchainhub = "*"
 scikit-learn = "*"
 scikit-image = "*"
+nltk = "*"
+scikit-llm = "*"
+scikit-ollama = "*"
 
 [dev-packages]
 jupyterlab = "*"
+seaborn = "*"
 ipywidgets = "*"
 matplotlib = "*"
-seaborn = "*"
 
 [requires]
 python_version = "3.12"
