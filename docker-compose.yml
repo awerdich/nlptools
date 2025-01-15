@@ -25,10 +25,12 @@ services:
     depends_on:
       - ollama
     ports:
-      - "7485:8888"
+      - "8888:8888"
+      #- "7485:8888"
     volumes:
       - .:/app
       - appdata:/app/data
+      #- /home/andreas/data:/app/diskdata
     networks:
       - ollamanetwork
 
