@@ -11,7 +11,6 @@ datasets = "*"
 sentencepiece = "*"
 sacremoses = "*"
 huggingface-hub = "*"
-nlptools = {file = ".", editable = true}
 langchain = "*"
 langchain-ollama = "*"
 ollama = "*"
@@ -22,6 +21,7 @@ scikit-image = "*"
 nltk = "*"
 scikit-llm = "*"
 scikit-ollama = "*"
+nlptools = {file = ".", editable = true}
 
 [dev-packages]
 jupyterlab = "*"
