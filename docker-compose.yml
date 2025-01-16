@@ -21,12 +21,12 @@ services:
       - DATA_DIR=/app/data
       - OLLAMA_HOST=ollama
       - OLLAMA_PORT=11434
-    env_file: ".env"
+    #env_file: ".env"
     depends_on:
       - ollama
     ports:
-      - "8888:8888"
-      #- "7485:8888"
+      #- "8888:8888"
+      - "7485:8888"
     volumes:
       - .:/app
       - appdata:/app/data
@@ -56,8 +56,6 @@ services:
 
 volumes:
   ollamadata:
-    external: true
-  webuidata:
     external: true
   appdata:
     external: false
